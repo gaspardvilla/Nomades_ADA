@@ -1,8 +1,8 @@
 import os
 import numpy as np
-from revenues import generate_revenue_dataset
-from time_series import generate_brownian_motion
-from houses import generate_houses_dataset
+from generators.revenues import generate_revenue_dataset
+from generators.time_series import generate_brownian_motion
+from generators.houses import generate_houses_dataset
 
 if __name__ == '__main__':
 

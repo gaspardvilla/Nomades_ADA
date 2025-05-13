@@ -24,15 +24,16 @@ def generate_houses_dataset(n_samples, seed, path):
 
     # Distance from downtown in km (distributed regarding wall type)
     data_dist_downtown = np.zeros(n_samples)
-    data_dist_downtown[data_walls == 'concrete'] = lognorm.rvs(s=0.7, scale=np.exp(3), size=len(data_walls[data_walls == 'concrete']))
-    data_dist_downtown[data_walls == 'brick'] = lognorm.rvs(s=0.2, scale=np.exp(1), size=len(data_walls[data_walls == 'brick']))
-    data_dist_downtown[data_walls == 'wood'] = lognorm.rvs(s=1.5, scale=np.exp(10), size=len(data_walls[data_walls == 'wood']))
+    data_dist_downtown[data_walls == 'concrete'] = lognorm.rvs(s=0.7, scale=3, size=len(data_walls[data_walls == 'concrete']))
+    data_dist_downtown[data_walls == 'brick'] = lognorm.rvs(s=0.2, scale=1, size=len(data_walls[data_walls == 'brick']))
+    data_dist_downtown[data_walls == 'wood'] = lognorm.rvs(s=1.5, scale=10, size=len(data_walls[data_walls == 'wood']))
 
     # Garden size (linearly dependant of the distance from downtown and the wall type and
     # adding white noise)
     data_garden_size = np.zeros(n_samples)
     data_garden_size[data_walls == 'concrete'] = data_dist_downtown[data_walls == 'concrete'] * .5 + np.random.normal(0, 3, len(data_walls[data_walls == 'concrete']))
     data_garden_size[data_walls == 'wood'] = data_dist_downtown[data_walls == 'wood'] * 10 + np.random.normal(0, 10, len(data_walls[data_walls == 'wood']))
+    data_garden_size = np.clip(data_garden_size, 0, 18000)
 
     # Surface area (logistic distribution regarding the distance from downtown)
     data_surface = np.clip(lognorm.rvs(s=0.3, scale=120, size=n_samples) * (data_dist_downtown / 10), 40, 500)

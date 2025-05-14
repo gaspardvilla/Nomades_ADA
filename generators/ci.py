@@ -10,7 +10,7 @@ def generate_ci(path):
     x = np.random.normal(mu, sigma, n)
 
     # Save to csv using pandas
-    pd.DataFrame(x).to_csv(f'{path}/data/normal_ci.csv', index=False)
+    pd.DataFrame(x).to_csv(f'{path}/normal_ci.csv', index=False)
 
     # Build data set from exponential distribution with lmabda = 1/12
     lambda_ = 12
@@ -18,4 +18,4 @@ def generate_ci(path):
     x = np.random.exponential(lambda_, n)
 
     # Save to csv using pandas
-    pd.DataFrame(x).to_csv(f'{path}/data/exponential_ci.csv', index=False)
+    pd.DataFrame(x).to_csv(f'{path}/exponential_ci.csv', index=False)

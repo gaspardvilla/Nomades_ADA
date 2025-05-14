@@ -15,12 +15,12 @@ fig, ax = plt.subplots()
 plt.subplots_adjust(bottom=0.25)  # Make space for slider
 
 # Initial histogram
-hist = ax.hist(variables, bins=10, density=True, alpha=0.5, 
+hist = ax.hist(variables, bins=100, density=True, alpha=0.5, 
                color='darkgreen', label='Simulated Data')
 ax.set_title(f'Geometric Distribution (p={scale_init:.2f})')
 ax.set_xlabel('Number of Successes')
 ax.set_ylabel('Density')
-ax.set_xlim(0,10)
+ax.set_xlim(0,4)
 ax.set_ylim(0,10)
 ax.legend()
 
@@ -32,12 +32,12 @@ def update(val):
     p = slider_p.val
     ax.clear()
     variables = stats.expon.rvs(scale = val, size=size)
-    ax.hist(variables, bins=10, density=True, alpha=0.5, 
+    ax.hist(variables, bins=100, density=True, alpha=0.5, 
             color='darkgreen', label='Simulated Data')
     ax.set_title(f'Exponential Distribution (p={p:.2f})')
     ax.set_xlabel('Number of Successes')
     ax.set_ylabel('Density')
-    ax.set_xlim(0,10)
+    ax.set_xlim(0,4)
     ax.set_ylim(0,10)
     ax.legend()
     fig.canvas.draw_idle()

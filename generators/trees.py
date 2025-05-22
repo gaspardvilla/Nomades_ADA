@@ -8,6 +8,13 @@ def generate_tree_data(path):
     y = np.sin(X).ravel()
     y[::5] += 3 * (0.5 - np.random.rand(16))
 
+    X_ = np.sort(np.random.rand(20, 1), axis=0)
+    y_ = np.sin(X_).ravel()
+
+    # Add it to X and y
+    X = np.concatenate((X, X_), axis=0)
+    y = np.concatenate((y, y_), axis=0)
+
     # Save to csv using pandas
     pd.DataFrame({
         'x': X.flatten(),

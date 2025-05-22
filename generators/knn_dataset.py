@@ -11,7 +11,6 @@ def generate_knn_dataset(path='data'):
     target[np.sqrt((coord_x - 3)**2 + (coord_y - 4)**2) < 2] = 1
     target[(6 <= coord_x) & (coord_x <= 9) & (7 <= coord_y) & (coord_y <= 8)] = 1
     target[(0 <= coord_x) & (coord_x <= 0.1) & (9.5 <= coord_y) & (coord_y <= 10)] = 1
-    print(len(target[(0 <= coord_x) & (coord_x <= 0.1) & (9.5 <= coord_y) & (coord_y <= 10)]))
     
     # Save to csv using pandas
     pd.DataFrame({

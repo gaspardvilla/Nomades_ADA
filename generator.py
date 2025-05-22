@@ -7,6 +7,7 @@ from generators.ci import generate_ci
 from generators.icecreams import ice_cream_sales_drowning_deaths
 from generators.overfitting import generate_overfitting_data
 from generators.knn_dataset import generate_knn_dataset
+from generators.trees import generate_tree_data
 
 if __name__ == '__main__':
     # Fix the path and the seed
@@ -25,3 +26,4 @@ if __name__ == '__main__':
     ice_cream_sales_drowning_deaths(path)
     generate_overfitting_data(30, path)
     generate_knn_dataset(path)
+    generate_tree_data(path)

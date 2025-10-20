@@ -4,11 +4,11 @@ This repository contains all the exercises and materials required for the two-we
 
 ## Repository Structure
 
+For both weeks (2 and 3), the repository is organized as follow:
 - `exercices/` - Jupyter notebooks with course exercises organized by date
-- `Corrections/` - Exercise solutions and corrections
+- `corrections/` - Exercise solutions and corrections
 - `generators/` - Data generation modules for creating synthetic datasets
 - `generator.py` - Main script to generate all required data files
-- `slides_builders/` - Materials for building course slides
 
 ## Setup Instructions
 

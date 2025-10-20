@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from week_2.generators.monday import monday2_generator
+from week_2.generators.monday import w2_sales, w2_waves
 
 if __name__ == '__main__':
     # Fix the path and the seed
@@ -10,6 +10,9 @@ if __name__ == '__main__':
 
     # Create the data folder if it doesn't exist
     os.makedirs(path, exist_ok = True)
+    os.makedirs(f'{path}/week_2', exist_ok = True)
+    os.makedirs(f'{path}/week_3', exist_ok = True)
 
-    # Run generators for each day
-    monday2_generator(path, seed)
+    # Run generators for week 2
+    w2_sales(f'{path}/week_2', seed)
+    w2_waves(f'{path}/week_2', seed)

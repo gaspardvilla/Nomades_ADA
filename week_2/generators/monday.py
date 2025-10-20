@@ -72,7 +72,7 @@ def w2_waves(path, seed):
     swell_periods = []
     
     # Generate data with simplified patterns
-    for i, dt in enumerate(datetime_range):
+    for dt in datetime_range:
         hour = dt.hour
         day_of_week = dt.weekday()  # 0=Monday, 6=Sunday
         month = dt.month

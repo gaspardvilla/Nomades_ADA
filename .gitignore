@@ -7,3 +7,4 @@
 *.mp4
 *.pyc
 old/
+*.DS_Store

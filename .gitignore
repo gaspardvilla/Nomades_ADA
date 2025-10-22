@@ -8,3 +8,4 @@
 *.pyc
 old/
 *.DS_Store
+*wait*

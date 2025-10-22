@@ -1,6 +1,7 @@
 import os
 import numpy as np
 from week_2.generators.monday import w2_sales, w2_waves
+from week_2.generators.wednesday import w2_ci
 
 if __name__ == '__main__':
     # Fix the path and the seed
@@ -16,3 +17,4 @@ if __name__ == '__main__':
     # Run generators for week 2
     w2_sales(f'{path}/week_2', seed)
     w2_waves(f'{path}/week_2', seed)
+    w2_ci(f'{path}/week_2', seed)

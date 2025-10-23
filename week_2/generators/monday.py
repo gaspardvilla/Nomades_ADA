@@ -55,7 +55,7 @@ def w2_waves(path, seed):
     # Create datetime range: Aug 1 - Sept 30, 2024 (61 days, 24 hours each)
     start_date = datetime(2024, 8, 1, 0, 0, 0)
     end_date = datetime(2024, 9, 30, 23, 0, 0)
-    datetime_range = pd.date_range(start=start_date, end=end_date, freq='H')
+    datetime_range = pd.date_range(start=start_date, end=end_date, freq='h')
     
     # Wind and wave directions
     directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']

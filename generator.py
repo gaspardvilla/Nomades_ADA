@@ -1,8 +1,11 @@
 import os
 import numpy as np
+
 from week_2.generators.monday import w2_sales, w2_waves
 from week_2.generators.wednesday import w2_ci
 from week_2.generators.thursday import w2_titanic, w2_ice_cream
+
+from week_3.generators.monday import w3_overfitting, w3_knn
 
 
 if __name__ == '__main__':
@@ -22,3 +25,7 @@ if __name__ == '__main__':
     w2_ci(f'{path}/week_2', seed)
     w2_titanic(f'{path}/week_2', seed)
     w2_ice_cream(f'{path}/week_2', seed)
+
+    # Run generators for week 3
+    w3_overfitting(f'{path}/week_3', nb_samples = 15, seed = seed)
+    w3_knn(f'{path}/week_3', nb_samples = 10000, seed = seed)

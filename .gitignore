@@ -9,3 +9,5 @@
 old/
 *.DS_Store
 *wait*
+*workspace*
+*copy*

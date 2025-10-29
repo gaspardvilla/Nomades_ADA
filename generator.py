@@ -6,6 +6,7 @@ from week_2.generators.wednesday import w2_ci
 from week_2.generators.thursday import w2_titanic, w2_ice_cream
 
 from week_3.generators.monday import w3_overfitting, w3_knn
+from week_3.generators.thursday import w3_decision_trees
 
 
 if __name__ == '__main__':
@@ -29,3 +30,4 @@ if __name__ == '__main__':
     # Run generators for week 3
     w3_overfitting(f'{path}/week_3', nb_samples = 15, seed = seed)
     w3_knn(f'{path}/week_3', nb_samples = 10000, seed = seed)
+    w3_decision_trees(f'{path}/week_3', seed = seed)
